@@ -26,7 +26,10 @@ def print_matches(base_product,matches):
         matches = matches.split(' ')
         for match in matches:
             print(base_product + ' : ' + match)
-            print(match + ' : ' + base_product)
+            for other_match in matches:
+                if match != other_match:
+                    print(match + ' : ' + base_product + ' : ' + other_match)
+
 
 def print_non_matches(base_product,matches,non_matches):
     non_matches = non_matches.split(' ')
