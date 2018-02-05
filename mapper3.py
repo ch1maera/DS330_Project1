@@ -2,25 +2,26 @@ import sys
 
 def main(argv):
 
-    line = sys.stdin.readline()
+    with open('mapper3test.txt','r') as e:
+        line = e.readline()
 
-    while line:
+        while line:
 
-        base_product = line.split(' ')[0]
+            base_product = line.split(' ')[0]
 
-        other_products = line.split(':')[-1]
+            other_products = line.split(':')[-1]
 
-        matches = other_products.split('!')[0].strip()
+            matches = other_products.split('!')[0].strip()
 
-        non_matches = other_products.split('!')[-1].strip()
+            non_matches = other_products.split('!')[-1].strip()
 
-        if matches != '':
-            print_matches(base_product, matches)
+            if matches != '':
+                print_matches(base_product, matches)
 
-        if non_matches != '':
-            print_non_matches(base_product, matches, non_matches)
+            if non_matches != '':
+                print_non_matches(base_product, matches, non_matches)
 
-        line = sys.stdin.readline()
+            line = e.readline()
 
 def print_matches(base_product,matches):
         matches = matches.split(' ')
