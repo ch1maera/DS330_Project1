@@ -103,11 +103,11 @@ def get_list_of_products(product_dict, current_key):
 
 
 def build_cart_products(subset_of_products):
-    #Returns a list of products found in a cart
+    # Returns a list of products found in a cart
     cart = []
     for product in subset_of_products:
         cart.append(product)
-    return cart.sort()
+    return cart
 
 
 def recommend_products(items_in_cart, current_key, product_dict):
@@ -123,7 +123,7 @@ def recommend_products(items_in_cart, current_key, product_dict):
                 break
         if should_append is True:
             append_item(product, items_in_cart, products_to_recommend)
-    return products_to_recommend.sort()
+    return products_to_recommend
 
 
 def append_item(matching_product, items_in_cart, list_of_items_to_append):
